@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
       builder: ( context, AsyncSnapshot<List<dynamic>> snapshot){
         
         return ListView(
-          children: _listItems(snapshot.data),
+          children: _listItems(snapshot.data, context),
         );
 
       },
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
 
   }
 
-  List<Widget> _listItems(List<dynamic> data) {
+  List<Widget> _listItems(List<dynamic> data, BuildContext context) {
 
     final List<Widget> opciones = [];
 
@@ -39,7 +39,12 @@ class HomePage extends StatelessWidget {
         leading: getIcon(element['icon']),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: (){
-          
+          // final route = MaterialPageRoute(
+          //   builder: (context)=> AlertPage()
+          // );
+          // Navigator.push(context, route);
+          Navigator.pushNamed(context, element['ruta']);
+
         },
       );
 
