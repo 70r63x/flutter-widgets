@@ -18,7 +18,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cards Page'),
+        title: Text('Animation Page'),
       ),
       body: Center(
         child: AnimatedContainer(
